@@ -1,0 +1,17 @@
+/* Section Styling */
+section {
+    padding: 60px;
+    height: 100vh; /* Full screen height */
+    border-bottom: 1px solid #ddd;
+    opacity: 0;
+    width: 100%;
+    transition: opacity 1s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+}
+
+section:nth-child(even) {
+    background-color: #f4f4f4;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizontal Navbar Example</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/section.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+<body style="font-family: Evolve;">
+    <!-- Horizontal Navbar -->
+    
+    <nav class ="navbar">
+        <ul class="navbar-menu">
+            <li><a href="#section1">Home</a></li>
+            <li><a href="#section2">About</a></li>
+            <li><a href="#section3">Services</a></li>
+            <li><a href="#section4">Contact</a></li>
+        </ul>
+    </nav>
+    
+
+    <!-- Sections -->
+    <section id="section1">
+        <div>
+            <h1 class="animated-gradient-text">
+                MD AMIR UL ISLAM
+            </h1>
+        <p>This is the first section of the website.</p>
+        </div>
+    </section>
+
+    <section id="section2">
+        <h2>About</h2>
+        <p>This section contains information about the website or business.</p>
+    </section>
+
+    <section id="section3">
+        <h2>Services</h2>
+        <p>Here you can list the services offered.</p>
+    </section>
+
+    <section id="section4">
+        <h2>Contact</h2>
+        <p>This section provides contact information.</p>
+    </section>
+
+
+
+    <script>
+        // JavaScript to add slide-down effect to the navbar links
+        const navbarLinks = document.querySelectorAll('.navbar-menu a');
+
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();  // Prevent default anchor behavior
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                // Scroll to the section with smooth effect
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            });
+        });
+
+        // JavaScript to make sections visible as they come into view (opacity transition)
+        const sections = document.querySelectorAll('section');
+        
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
