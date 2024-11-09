@@ -55,7 +55,7 @@ html {
 .body-bg {
     font-family: Evolve;
     position: relative;
-    overflow: hidden; /* Ensures the pseudo-element stays within bounds */
+    overflow: auto; /* Ensures the pseudo-element stays within bounds */
 }
 
 /* Background overlay */
@@ -79,4 +79,8 @@ html {
 
 .rounded-image {
     border-radius: 15px; /* Adjust radius for rounded corners */
+}
+
+p {
+    line-height: 200%;
 }
