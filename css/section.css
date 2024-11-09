@@ -12,8 +12,6 @@ section.visible {
     opacity: 1;
 }
 
-section:nth-child(even) {
-    background-color: #f4f4f4;
-}
+
 
 
