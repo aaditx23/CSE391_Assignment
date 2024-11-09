@@ -31,7 +31,7 @@ html {
     -webkit-background-clip: text; /* Clip the background to the text */
     background-clip: text; /* For browsers that support background-clip on text */
     color: transparent; /* Make text color transparent to show the gradient */
-    font-size: 3rem; /* You can adjust the font size */
+    
 }
 
 .gradient-text {
@@ -42,6 +42,12 @@ html {
     -webkit-background-clip: text; /* For webkit-based browsers */
     background-clip: text; /* For browsers that support background-clip on text */
     color: transparent; /* Make text color transparent to show the gradient */
-    font-size: 3rem; /* You can adjust the font size */
+    
+}
+
+.centre {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
