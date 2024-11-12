@@ -12,16 +12,20 @@
     <link rel="stylesheet" href="css/card.css" />
     <link rel="stylesheet" href="css/table.css" />
     <link rel="stylesheet" href="css/div.css" />
+    <script src="js/navbar.js"></script>
 <body class="body-bg">
     <!-- Horizontal Navbar -->
     
-    <nav class ="navbar">
+    <!-- <nav class ="navbar">
         <ul class="navbar-menu">
             <li><a href="#section1">Info</a></li>
             <li><a href="#section2">Interests</a></li>
             <li><a href="#section3">Co-Curricular Activities</a></li>
         </ul>
-    </nav>
+    </nav> -->
+    <div id="navbar-container" class="navbar">
+
+    </div>
     
 
     <!-- Sections -->
@@ -192,37 +196,11 @@
 
 
     <script>
-        // JavaScript to add slide-down effect to the navbar links
-        const navbarLinks = document.querySelectorAll('.navbar-menu a');
-
-        navbarLinks.forEach(link => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();  // Prevent default anchor behavior
-                const targetId = link.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-
-                // Scroll to the section with smooth effect
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                });
-            });
+        document.addEventListener("DOMContentLoaded", () => {
+        loadNavbar();
+        scrollOpacity()
         });
-
-        // JavaScript to make sections visible as they come into view (opacity transition)
-        const sections = document.querySelectorAll('section');
         
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.5 });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
 
         document.addEventListener("DOMContentLoaded", function () {
         const pageInfo = document.getElementById("page-info");
