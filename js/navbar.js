@@ -18,7 +18,7 @@ function loadNavbar() {
         nav.innerHTML = `
         <nav class="navbar" style="position: sticky;">
             <ul class="navbar-menu">
-                <li><a href=#section1>HOME</a></li>
+                <li><a href=#top>HOME</a></li>
                 <li><a href="#section2">INTERESTS</a></li>
                 <li><a href="#section3">CO-CURRICULAR ACTIVITIES</a></li>
                 <li><a href="projects.html">PROJECTS</a></li>

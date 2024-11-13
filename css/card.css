@@ -21,7 +21,7 @@
 
 .card-transparent {
     background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
-    padding: 5px;
+    padding: 20px;
     border-radius: 10px;
     text-decoration: none;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); /* Default shadow */

@@ -5,67 +5,236 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 01</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/section.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/clickable-card.css" />
-    <link rel="stylesheet" href="css/card.css" />
-    <link rel="stylesheet" href="css/table.css" />
     <link rel="stylesheet" href="css/div.css" />
+    <link rel="stylesheet" href="css/carousel.css" />
     <script src="js/navbar.js"></script>
+    <script src="js/carousel.js"></script>
 <body class="body-bg">
     <div id="navbar-container">
 
     </div>
-    
-    <section id="section2">
-        <h2>Personal Interests</h2>
-        <div class="flex-row-justified">
-            <div class="clickable-card-transparent">
-                <h1>Bikes</h1><br><br>
-                <div class="flex-row">
-                    <div class="card" style="margin-right: 20px;">
-                        <a href="https://i.pinimg.com/1200x/9e/f7/65/9ef765111a18912119b39bcd5e88b84e.jpg" target="_blank">
-                            <img src="https://i.pinimg.com/1200x/9e/f7/65/9ef765111a18912119b39bcd5e88b84e.jpg" 
-                                    alt="Pulsar 220f" height="400" style="border-radius: 10px;">
-                        </a>
-                        <i style="padding-top: 5px;">Pulsar 220F</i>
-                    </div>
-                    <div class="card">
-                        <a href="https://i.pinimg.com/1200x/73/0e/59/730e59b876529e6e9982b92ab0428dda.jpg" target="_blank">
-                            <img src="https://i.pinimg.com/1200x/73/0e/59/730e59b876529e6e9982b92ab0428dda.jpg" alt="Yamaha MT15" height="400"
-                            style="border-radius: 10px;">
-                        </a>
-                        <i style="padding-top: 5px;">Yamaha MT15</i>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="clickable-card-transparent">
-                <h1>Mechanical Pencils</h1><br><br>
-                <div class = "flex-row">
-                    <div class="card" style="width: fit-content; display: flex; flex-direction: column; align-items: center; margin-right: 20px;">
-                        <a href="https://i.pinimg.com/1200x/a5/ff/a9/a5ffa9a56eb40c9833b827168b2b9398.jpg" target="_blank">
-                            <img src="https://i.pinimg.com/1200x/a5/ff/a9/a5ffa9a56eb40c9833b827168b2b9398.jpg" 
-                                    alt="TOMBOW Zoom V472" height="400" style="border-radius: 10px;">
-                        </a>
-                        <i style="padding-top: 5px;">TOMBOW Zoom V472</i>
-                    </div>
-                    <div class="card">
-                        <a href="https://i.pinimg.com/1200x/8f/79/db/8f79dba7e250405b30a1252e5cd363df.jpg" target="_blank">
-                            <img src="https://i.pinimg.com/1200x/8f/79/db/8f79dba7e250405b30a1252e5cd363df.jpg" 
-                                    alt="Pentel Graphgear 1000" height="400" style="border-radius: 10px;">
-                        </a>
-                        <i style="padding-top: 5px;">Pentel Graphgear 1000</i>
-                    </div>
-                </div>
+
+    <div>
+        <div class="centre">
+            <div class="clickable-card-transparent" url = "https://github.com/aaditx23/wallpaperwizard">
+                <h2>WallpaperWizard</h2><br>
+                An android application for making sets of wallpaper for one-click-set and scheduling wallpapers <br>
             </div>
         </div>
+        <div class="carousel-container" id="carousel1">
+            <div class="carousel-slides">
+            
+                
+                <div class="slide active">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/wallpaperwizard/01.png"  alt="Image 1">
+                        <img class="carousel-image" src="img/projects/wallpaperwizard/02.png"  alt="Image 2">
+                    </div>
+                </div>
+            
+            
+                <div class="slide">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/wallpaperwizard/03.png"  alt="Image 3">
+                        <img class="carousel-image" src="img/projects/wallpaperwizard/04.png"  alt="Image 4">
+                    </div>
+                </div>
+            
+                
+                <div class="slide">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/wallpaperwizard/05.png"  alt="Image 5">
+                        <img class="carousel-image" src="img/projects/wallpaperwizard/06.png"  alt="Image 6">
+                    </div>
+                </div>
+            
+                
+                <div class="slide">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/wallpaperwizard/07.png"  alt="Image 7">
+                        <img class="carousel-image" src="img/projects/wallpaperwizard/08.png"  alt="Image 8">
+                    </div>
+                </div>
+            
+                
+                <div class="slide">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/wallpaperwizard/09.png"  alt="Image 9">
+                        <img class="carousel-image" src="img/projects/wallpaperwizard/10.png"  alt="Image 10">
+                    </div>
+                </div>
+            
+                
+                <div class="slide">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/wallpaperwizard/11.png"  alt="Image 11">
+                        <img class="carousel-image" src="img/projects/wallpaperwizard/01.png"  alt="Image 1">
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-arrow left-arrow">&#10094;</button>
+            <button class="carousel-arrow right-arrow">&#10095;</button>
+            
+            <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
 
+    <div>
+        <div class="centre">
+            <div class="clickable-card-transparent" url = "https://github.com/aaditx23/bracusocial">
+                <h2>BracuSocial</h2><br>
+                An android application for BRACU students to manage courses, routines, find friends, see friends' routines and more. <br>
+            </div>
+        </div>
+        <div class="carousel-container" id="carousel2">
+            <div class="carousel-slides">
+            
+                <div class="slide active">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/bracusocial/01.png"  alt="Image 1">
+                        <img class="carousel-image" src="img/projects/bracusocial/02.png"  alt="Image 2">
+                    </div>
+                </div>
 
-    </section>
+                <div class="slide">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/bracusocial/03.png"  alt="Image 3">
+                        <img class="carousel-image" src="img/projects/bracusocial/04.png"  alt="Image 4">
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/bracusocial/05.png"  alt="Image 5">
+                        <img class="carousel-image" src="img/projects/bracusocial/06.png"  alt="Image 6">
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/bracusocial/07.png"  alt="Image 7">
+                        <img class="carousel-image" src="img/projects/bracusocial/08.png"  alt="Image 8">
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/bracusocial/09.png"  alt="Image 9">
+                        <img class="carousel-image" src="img/projects/bracusocial/10.png"  alt="Image 10">
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/bracusocial/11.png"  alt="Image 11">
+                        <img class="carousel-image" src="img/projects/bracusocial/12.png"  alt="Image 12">
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/bracusocial/13.png"  alt="Image 13">
+                        <img class="carousel-image" src="img/projects/bracusocial/14.png"  alt="Image 14">
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/bracusocial/15.png"  alt="Image 15">
+                        <img class="carousel-image" src="img/projects/bracusocial/16.png"  alt="Image 16">
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/bracusocial/17.png"  alt="Image 17">
+                        <img class="carousel-image" src="img/projects/bracusocial/18.png"  alt="Image 18">
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-arrow left-arrow">&#10094;</button>
+            <button class="carousel-arrow right-arrow">&#10095;</button>
+            
+            <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="centre"></div>
+            <div class="clickable-card-transparent" url = "https://github.com/aaditx23/quadraticequation">
+                <h2>Quadratic Equation</h2><br>
+                An android application that solves and generates quadratic equations. Also handles complex roots. <br>
+            </div>
+        </div>
+        <div class="carousel-container" id="carousel3">
+            <div class="carousel-slides">
+            
+                <div class="slide active">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/quadraticequation/01.png"  alt="Image 1">
+                        <img class="carousel-image" src="img/projects/quadraticequation/02.png"  alt="Image 2">
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="flex-row-justified">  
+                        <img class="carousel-image" src="img/projects/quadraticequation/03.png"  alt="Image 3">
+                        <img class="carousel-image" src="img/projects/quadraticequation/04.png"  alt="Image 4">
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-arrow left-arrow">&#10094;</button>
+            <button class="carousel-arrow right-arrow">&#10095;</button>
+            
+            <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    
+    
     <script>
-        loadNavbar();
+        document.addEventListener("DOMContentLoaded", () => {
+            loadNavbar();
+            scrollOpacity();
+        });
+        document.querySelectorAll('.carousel-container').forEach(container => {
+            new Carousel(container);
+        });
+        document.querySelectorAll(".clickable-card-transparent").forEach(div => {
+    div.addEventListener("click", () => {
+        const url = div.getAttribute("url");
+        if (url) {
+            window.open(url, "_blank");
+        }
+    });
+});
+
     </script>
 </body>
 

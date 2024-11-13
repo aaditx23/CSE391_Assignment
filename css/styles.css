@@ -31,6 +31,7 @@ html {
     -webkit-background-clip: text; /* Clip the background to the text */
     background-clip: text; /* For browsers that support background-clip on text */
     color: transparent; /* Make text color transparent to show the gradient */
+
     
 }
 
@@ -49,6 +50,8 @@ html {
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* Main body styles */
