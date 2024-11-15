@@ -32,6 +32,8 @@ function loadNavbar() {
         <nav class="navbar">
             <ul class="navbar-menu">
                 <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#section2">INTERESTS</a></li>
+                <li><a href="index.html#section3">CO-CURRICULAR ACTIVITIES</a></li>
                 <li><a href="${currentPage}">${currentPage.replace(".html", "").toUpperCase()}</a></li>
             </ul>
         </nav>
