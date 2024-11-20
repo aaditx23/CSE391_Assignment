@@ -194,9 +194,12 @@
         loadNavbar();
         scrollOpacity()
         });
+        // After page loads, check for a stored scroll-to section
+
         
 
         document.addEventListener("DOMContentLoaded", function () {
+        scrollSectionFromLocalStorage();
         const pageInfo = document.getElementById("page-info");
 
         // Get the current URL

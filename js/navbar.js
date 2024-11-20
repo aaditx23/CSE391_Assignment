@@ -1,3 +1,64 @@
+function dropDownHTML(currentPage){
+    return `
+    <li>
+        <select id="page-selector" class="dropdown">
+            <option value="index.html" ${currentPage === "index.html" ? "selected" : ""}>Assignment 01</option>
+            <option value="two.html" ${currentPage === "two.html" ? "selected" : ""}>Assignment 02</option>
+        </select>
+    </li>
+`;
+}
+
+function navBarOne(currentPage){
+    return `
+        <nav class="navbar" style="position: sticky;">
+            <ul class="navbar-menu">
+                <li><a href="#top">HOME</a></li>
+                <li><a href="#section2">INTERESTS</a></li>
+                <li><a href="#section3">CO-CURRICULAR ACTIVITIES</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                ${dropDownHTML(currentPage)}
+            </ul>
+        </nav>
+        `;
+}
+
+function navBarTwo(currentPage){
+    return `
+        <nav class="navbar">
+            <ul class="navbar-menu">
+                <li><a href="#top">WEIGHT CONVERTER</a></li>
+                <li><a href="#section2">SERIES CALCULATOR</a></li>
+                <li><a href="#section3">MAGIC BOX</a></li>
+                <li>
+                    <select id="page-selector" class="dropdown">
+                        <option value="index.html" ${currentPage === "index.html" ? "selected" : ""}>Assignment 01</option>
+                        <option value="two.html" ${currentPage === "two.html" ? "selected" : ""}>Assignment 02</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+        `
+}
+function navBarProject(currentPage){
+    return `
+        <nav class="navbar">
+            <ul class="navbar-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#section2">INTERESTS</a></li>
+                <li><a href="index.html#section3">CO-CURRICULAR ACTIVITIES</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li>
+                    <select id="page-selector" class="dropdown">
+                        <option value="index.html" ${currentPage === "index.html" ? "selected" : ""}>Assignment 01</option>
+                        <option value="two.html" ${currentPage === "two.html" ? "selected" : ""}>Assignment 02</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+        `
+}
+
 function loadNavbar() {
     const nav = document.getElementById("navbar-container");
 
@@ -14,59 +75,17 @@ function loadNavbar() {
 
     // Check if the current page is index.html
     if (currentPage === "index.html" || currentPage === "") {
-        nav.innerHTML = `
-        <nav class="navbar" style="position: sticky;">
-            <ul class="navbar-menu">
-                <li><a href="#top">HOME</a></li>
-                <li><a href="#section2">INTERESTS</a></li>
-                <li><a href="#section3">CO-CURRICULAR ACTIVITIES</a></li>
-                <li><a href="projects.html">PROJECTS</a></li>
-                <li>
-                    <select id="page-selector" class="dropdown">
-                        <option value="index.html" ${currentPage === "index.html" ? "selected" : ""}>Assignment 01</option>
-                        <option value="two.html" ${currentPage === "two.html" ? "selected" : ""}>Assignment 02</option>
-                    </select>
-                </li>
-            </ul>
-        </nav>
-        `;
+        nav.innerHTML = navBarOne(currentPage);
         navClick();
     } 
     else if (currentPage === "two.html") {
-        nav.innerHTML = `
-        <nav class="navbar">
-            <ul class="navbar-menu">
-                <li><a href="#top">WEIGHT CONVERTER</a></li>
-                <li><a href="#section2">SERIES CALCULATOR</a></li>
-                <li><a href="#section3">MAGIC BOX</a></li>
-                <li>
-                    <select id="page-selector" class="dropdown">
-                        <option value="index.html" ${currentPage === "index.html" ? "selected" : ""}>Assignment 01</option>
-                        <option value="two.html" ${currentPage === "two.html" ? "selected" : ""}>Assignment 02</option>
-                    </select>
-                </li>
-            </ul>
-        </nav>
-        `;
+        nav.innerHTML = navBarTwo(currentPage);
         navClick();
     }
     else {  //project.html
-        nav.innerHTML = `
-        <nav class="navbar">
-            <ul class="navbar-menu">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="index.html#section2">INTERESTS</a></li>
-                <li><a href="index.html#section3">CO-CURRICULAR ACTIVITIES</a></li>
-                <li><a href="projects.html">PROJECTS</a></li>
-                <li>
-                    <select id="page-selector" class="dropdown">
-                        <option value="index.html" ${currentPage === "index.html" ? "selected" : ""}>Assignment 01</option>
-                        <option value="two.html" ${currentPage === "two.html" ? "selected" : ""}>Assignment 02</option>
-                    </select>
-                </li>
-            </ul>
-        </nav>
-        `;
+        nav.innerHTML = navBarProject(currentPage);
+        navSubClick();
+
     }
 
     addDropdownListener();
@@ -78,6 +97,51 @@ function addDropdownListener() {
         const selectedPage = event.target.value;
         window.location.href = selectedPage;
     });
+}
+
+function navSubClick() {
+    const nav = document.getElementById("navbar-container");
+    const navbarLinks = nav.querySelectorAll('.navbar-menu a');
+
+    navbarLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); 
+
+            const href = link.getAttribute('href');
+            const [page, sectionId] = href.split('#');
+
+            if (page === "index.html") {
+                localStorage.setItem('scrollToSection', sectionId || ""); 
+                window.location.href = page;
+            } else {
+                if (sectionId) {
+                    const targetSection = document.getElementById(sectionId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start',
+                        });
+                    }
+                } else {
+                    window.location.href = href;
+                }
+            }
+        });
+    });
+}
+
+function scrollSectionFromLocalStorage(){
+    const scrollToSection = localStorage.getItem('scrollToSection');
+    if (scrollToSection) {
+        const targetSection = document.getElementById(scrollToSection);
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        }
+        localStorage.removeItem('scrollToSection'); // Clear after scrolling
+    }
 }
 
 function navClick(){
