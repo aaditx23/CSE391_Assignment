@@ -1,10 +1,10 @@
 function dropDownHTML(currentPage){
-    const pages = ["index.html", "projects.html"];
+    const pages = ["one.html", "projects.html"];
     return `
     <div style="margin-left:auto">
         <li>
             <select id="page-selector" class="dropdown dropdown-blur">
-                <option value="index.html" ${pages.includes(currentPage) ? "selected" : ""}>Assignment 01</option>
+                <option value="one.html" ${pages.includes(currentPage) ? "selected" : ""}>Assignment 01</option>
                 <option value="two.html" ${currentPage === "two.html" ? "selected" : ""}>Assignment 02</option>
             </select>
         </li>
@@ -43,9 +43,9 @@ function navBarProject(currentPage){
     return `
         <nav class="navbar">
             <ul class="navbar-menu">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="index.html#section2">INTERESTS</a></li>
-                <li><a href="index.html#section3">CO-CURRICULAR ACTIVITIES</a></li>
+                <li><a href="one.html">HOME</a></li>
+                <li><a href="one.html#section2">INTERESTS</a></li>
+                <li><a href="one.html#section3">CO-CURRICULAR ACTIVITIES</a></li>
                 <li><a href="projects.html">PROJECTS</a></li>
                 ${dropDownHTML(currentPage)}
             </ul>
@@ -64,11 +64,11 @@ function loadNavbar() {
         homeRef =  "#section1"
     }
     else{
-        homeRef = "index.html"
+        homeRef = "one.html"
     }
 
-    // Check if the current page is index.html
-    if (currentPage === "index.html" || currentPage === "") {
+    // Check if the current page is one.html
+    if (currentPage === "one.html" || currentPage === "") {
         nav.innerHTML = navBarOne(currentPage);
         navClick();
     } 
@@ -104,7 +104,7 @@ function navSubClick() {
             const href = link.getAttribute('href');
             const [page, sectionId] = href.split('#');
 
-            if (page === "index.html") {
+            if (page === "one.html") {
                 localStorage.setItem('scrollToSection', sectionId || ""); 
                 window.location.href = page;
             } else {

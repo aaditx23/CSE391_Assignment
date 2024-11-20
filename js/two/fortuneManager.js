@@ -33,22 +33,10 @@ class FortuneManager {
             })
         ]
         this.fortunes = [
-            new Fortune({
-                text: "Happiness is a journey, not a destination.",
-                fortuneStyle : this.fortuneStyles[0]
-            }),
-            new Fortune({
-                text: "Success is not final, failure is not fatal.",
-                fortuneStyle : this.fortuneStyles[1]
-            }),
-            new Fortune({
-                text: "Keep your face always toward the sunshine.",
-                fortuneStyle : this.fortuneStyles[2]
-            }),
-            new Fortune({
-                text: "The best way to predict your future is to create it.",
-                fortuneStyle : this.fortuneStyles[3]
-            })
+            "Happiness is a journey, not a destination.",
+            "Success is not final, failure is not fatal.",
+            "Keep your face always toward the sunshine.",
+            "The best way to predict your future is to create it."
         ];
 
         this.quoteBox = document.getElementById(quoteBoxId);
@@ -68,7 +56,7 @@ class FortuneManager {
         this.quoteBox.innerHTML = 
         `
             <div class="flex-row-justified">
-                <div style="width: 100%; align-items: center;">${fortune.text} </div>
+                <div style="width: 100%; align-items: center;">${fortune} </div>
                 <div class="button-container">
                     <button class="clickable-card" index="0" ></button>
                     <button class="clickable-card" index="1" ></button>
@@ -82,7 +70,7 @@ class FortuneManager {
         this.quoteBox.style.fontColor = style.fontColor;
         this.quoteBox.style.backgroundColor = style.bgColor;
         this.quoteBox.style.fontFamily = style.fontFamily;
-        this.quoteBox.style.borderColor = this.adjustBrightness(style.bgColor, 0.8)
+        this.quoteBox.style.borderColor = this.adjustBrightness(style.bgColor, 0.7)
     }
 
     changeStyle(index) {
@@ -91,7 +79,7 @@ class FortuneManager {
         const fortuneStyle = this.fortuneStyles[idx];
         
         this.quoteBox.style.backgroundColor = fortuneStyle.bgColor;
-        this.quoteBox.style.borderColor = this.adjustBrightness(fortuneStyle.bgColor, 0.8);
+        this.quoteBox.style.borderColor = this.adjustBrightness(fortuneStyle.bgColor, 0.7);
         this.quoteBox.style.fontFamily = fortuneStyle.fontFamily
         this.quoteBox.style.fontSize = fortuneStyle.fontSize
     }
