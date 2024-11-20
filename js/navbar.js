@@ -48,6 +48,7 @@ function loadNavbar() {
             </ul>
         </nav>
         `;
+        navClick();
     }
     else {  //project.html
         nav.innerHTML = `
@@ -90,6 +91,7 @@ function navClick(){
             
             if (targetId.includes("#")) {
                 const sectionId = targetId.substring(targetId.indexOf("#") + 1);
+                console.log(sectionId)
                 const targetSection = document.getElementById(sectionId);
                 targetSection.scrollIntoView({
                     behavior: 'smooth',
