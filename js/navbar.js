@@ -1,12 +1,14 @@
 function dropDownHTML(currentPage){
     const pages = ["index.html", "projects.html"];
     return `
-    <li>
-        <select id="page-selector" class="dropdown">
-            <option value="index.html" ${pages.includes(currentPage) ? "selected" : ""}>Assignment 01</option>
-            <option value="two.html" ${currentPage === "two.html" ? "selected" : ""}>Assignment 02</option>
-        </select>
-    </li>
+    <div style="margin-left:auto">
+        <li>
+            <select id="page-selector" class="dropdown dropdown-blur">
+                <option value="index.html" ${pages.includes(currentPage) ? "selected" : ""}>Assignment 01</option>
+                <option value="two.html" ${currentPage === "two.html" ? "selected" : ""}>Assignment 02</option>
+            </select>
+        </li>
+    </div>
 `;
 }
 

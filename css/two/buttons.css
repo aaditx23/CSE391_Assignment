@@ -1,0 +1,23 @@
+.button {
+    background-color: var(--primary-color); /* Replace with dynamic theme color */
+    color: white;
+    padding: 12px 24px;
+    font-family: Evolve;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(17,0,0,0.9);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.button:hover {
+    background-color: var(--primary-hover-color); /* Slightly darker */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
+}
+
+.button:active {
+    background-color: var(--primary-active-color); /* Even darker */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

@@ -4,8 +4,8 @@
     padding: 5px;
     border-radius: 10px;
     text-decoration: none;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);  /* Default shadow */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
     cursor: pointer;
     width: fit-content; 
     display: flex; 
@@ -14,9 +14,37 @@
 
 }
 
-/* When the card is hovered over, increase shadow */
+
 .card:hover {
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+.card-item {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    color: white; 
+}
+
+.card-item:nth-child(1) {
+    background-color: #000930; /* Dark blue */
+}
+
+.card-item:nth-child(2) {
+    background-color: #00274e; /* Medium dark blue */
+}
+
+.card-item:nth-child(3) {
+    background-color: #003f69; /* Lighter blue */
+}
+
+.card-item:nth-child(4) {
+    background-color: #0060b4; /* Light blue */
+}
+
+.card-item:nth-child(5) {
+    background-color: #0054d3; /* Very light blue */
 }
 
 .card-transparent {

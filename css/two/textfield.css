@@ -1,0 +1,48 @@
+.textfield-container {
+    position: relative;
+    width: 100%;
+}
+
+.textfield {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
+    color: #000;
+    background-color: var(--surface-color, #ffffff);
+    border: 2px solid var(--outline-color, #6200ea);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+}
+
+.textfield:hover {
+    border-color: var(--outline-hover-color, #3700b3);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.textfield:focus {
+    border-color: var(--outline-active-color, #30009c);
+    outline: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating label style */
+.label {
+    position: absolute;
+    top: 42%;
+    left: 12px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    padding: 0 4px;
+    color: var(--outline-color, #6200ea);
+    font-size: 16px;
+    transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+.textfield:focus ~ .label,
+.textfield:not(:placeholder-shown) ~ .label {
+    top: 12px;
+    font-size: 12px;
+    color: var(--outline-active-color, #30009c);
+}

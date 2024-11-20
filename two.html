@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="css/two/card.css" />
     <link rel="stylesheet" href="css/two/table.css" />
     <link rel="stylesheet" href="css/two/div.css" />
+    <link rel="stylesheet" href="css/two/buttons.css" />
+    <link rel="stylesheet" href="css/two/textfield.css" />
+    <link rel="stylesheet" href="css/dropdown.css" />
     
     <script src="js/two/Fortune.js"></script>
     <script src="js/two/fortuneManager.js"></script>
@@ -22,60 +25,76 @@
 </head>
 <body class="body-bg">
 
-    <section id="top" style="padding: 0px;"></section>
+    <section id="top" style="padding: 0px; height: 0%; margin: 0px;"></section>
 
     <div id="navbar-container" class="navbar">
 
     </div>
 
-    <section id="section1">
-        <div class="card" style="padding: 20px;">
+    <section id="section1" style="top: 0%; justify-content:flex-start;">
+        <div class="card-transparent" style="padding: 20px;">
             <h2>Weight Converter</h2><br>
-            <label for="weightIn">Weight:</label><br>
-            <input type="number" id="weightIn" placeholder="Enter weight" /><br>
+            
+            <div class="textfield-container">
+                <input class="textfield" style="margin-top: 20px;" type="number" id="weightIn" placeholder="" /><br>
+                <label class="label" for="weightIn">Enter Weight</label><br>
+            </div>
     
-            <label for="unitType">Convert:</label><br>
-            <select id="unitType">
-                <option value="k2p">KG -> lb</option>
-                <option value="p2k">lb -> KG</option>
-            </select><br>
-    
-            <button onclick="convert()">Convert</button><br>
+            <div class="dropdown-container" style="margin: 20px; width: 300px;">
+                <label for="unitType">Convert:</label><br>
+                <select class="dropdown" id="unitType">
+                    <option value="k2p">KG -> lb</option>
+                    <option value="p2k">lb -> KG</option>
+                </select>
+            
+            </div>
+            <button class="button" style="background-color: #7d7fdd;"  onclick="convert()">Convert</button><br>
     
             <span id="result"></span>
         </div>
     </section>
 
     <section id="section2">
-        <div class="card" style=" padding: 20px; background-color: cadetblue;">
+        <div class="card-transparent" style=" padding: 20px;">
             <h2>Series Calculator</h2><br>
-            <label for="seriesInput">Input series of numbers (comma-separated):</label><br>
-            <input type="text" id="seriesInput" placeholder="e.g., 5, 10, 15" />
-            <div class="card-transparent" style="background-color: rgba(106, 0, 206, 0.3); margin-top: 10px;">
-                <div><strong>Max:</strong> <span id="maxOutput">-</span></div>
-                <div><strong>Min:</strong> <span id="minOutput">-</span></div>
-                <div><strong>Sum:</strong> <span id="sumOutput">-</span></div>
-                <div><strong>Average:</strong> <span id="avgOutput">-</span></div>
-                <div><strong>Reverse Order:</strong> <span id="reverseOutput">-</span></div>
+            <label  for="seriesInput">Input series of numbers (comma-separated):</label>
+            <div class="textfield-container" style="margin: 20px;">
+                <input class="textfield" type="text" id="seriesInput" placeholder="e.g., 5, 10, 15" />
+            </div>
+            <div class="card" style="background-color: #7d7fdd; margin-top: 10px; align-items: start; width: 100%;">
+                <div class="card card-item" style="flex-direction: row; padding: 10px; margin: 10px;"><strong>Max:</strong> <span id="maxOutput">-</span></div>
+                <div class="card card-item" style="flex-direction: row; padding: 10px; margin: 10px;"><strong>Min:</strong> <span id="minOutput">-</span></div>
+                <div class="card card-item" style="flex-direction: row; padding: 10px; margin: 10px;"><strong>Sum:</strong> <span id="sumOutput">-</span></div>
+                <div class="card card-item" style="flex-direction: row; padding: 10px; margin: 10px;"><strong>Average:</strong> <span id="avgOutput">-</span></div>
+                <div class="card card-item" style="flex-direction: row; padding: 10px; margin: 10px;"><strong>Reverse Order:</strong> <span id="reverseOutput">-</span></div>
             </div>
         </div>
     </section>
 
-    <section id="section3">
-        <div>
+    <section id="section3" style="margin-top: 20px;">
+        <div class="card-transparent">
             <h1>Text Manipulator</h1>
-            <textarea id="textArea"></textarea>
+            
+            <!-- Textarea with floating label -->
+            <label for="textArea">Your Text</label>
+            <div class="textfield-container" style="height: 40vh; width: 40vw; align-items: center; margin: 20px;">
+                <textarea id="textArea" class="textfield" style="width: 100%; height: 100%;" placeholder="Enter text here..."></textarea>
+            </div>
+            
+            <!-- Buttons container -->
             <div>
-                <button id="clearAll">Clear All</button>
-                <button id="capitalize">Capitalize</button>
-                <button id="sort">Sort</button>
-                <button id="reverse">Reverse</button>
-                <button id="stripBlank">Strip Blank</button>
-                <button id="addNumbers">Add Numbers</button>
-                <button id="shuffle">Shuffle</button>
+                <button id="clearAll" class="button" style="background-color: #770800;">Clear All</button>
+                <button id="capitalize" class="button" style="background-color: #4caf50;">Capitalize</button>
+                <button id="sort" class="button" style="background-color: #704300;">Sort</button>
+                <button id="reverse" class="button" style="background-color: #2196f3;">Reverse</button>
+                <button id="stripBlank" class="button" style="background-color: #9c27b0;">Strip Blank</button>
+                <button id="addNumbers" class="button" style="background-color: #009688;">Add Numbers</button>
+                <button id="shuffle" class="button" style="background-color: #3f51b5;">Shuffle</button>
+
             </div>
         </div>
     </section>
+    
 
 
     <div class="quote-box" id="quote-box">
