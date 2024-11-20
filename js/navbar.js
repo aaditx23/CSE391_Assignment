@@ -1,8 +1,9 @@
 function dropDownHTML(currentPage){
+    const pages = ["index.html", "projects.html"];
     return `
     <li>
         <select id="page-selector" class="dropdown">
-            <option value="index.html" ${currentPage === "index.html" ? "selected" : ""}>Assignment 01</option>
+            <option value="index.html" ${pages.includes(currentPage) ? "selected" : ""}>Assignment 01</option>
             <option value="two.html" ${currentPage === "two.html" ? "selected" : ""}>Assignment 02</option>
         </select>
     </li>
@@ -30,17 +31,13 @@ function navBarTwo(currentPage){
                 <li><a href="#top">WEIGHT CONVERTER</a></li>
                 <li><a href="#section2">SERIES CALCULATOR</a></li>
                 <li><a href="#section3">MAGIC BOX</a></li>
-                <li>
-                    <select id="page-selector" class="dropdown">
-                        <option value="index.html" ${currentPage === "index.html" ? "selected" : ""}>Assignment 01</option>
-                        <option value="two.html" ${currentPage === "two.html" ? "selected" : ""}>Assignment 02</option>
-                    </select>
-                </li>
+                ${dropDownHTML(currentPage)}
             </ul>
         </nav>
         `
 }
 function navBarProject(currentPage){
+    
     return `
         <nav class="navbar">
             <ul class="navbar-menu">
@@ -48,12 +45,7 @@ function navBarProject(currentPage){
                 <li><a href="index.html#section2">INTERESTS</a></li>
                 <li><a href="index.html#section3">CO-CURRICULAR ACTIVITIES</a></li>
                 <li><a href="projects.html">PROJECTS</a></li>
-                <li>
-                    <select id="page-selector" class="dropdown">
-                        <option value="index.html" ${currentPage === "index.html" ? "selected" : ""}>Assignment 01</option>
-                        <option value="two.html" ${currentPage === "two.html" ? "selected" : ""}>Assignment 02</option>
-                    </select>
-                </li>
+                ${dropDownHTML(currentPage)}
             </ul>
         </nav>
         `
