@@ -1,0 +1,23 @@
+/* Define Normal Evolve Font */
+@font-face {
+    font-family: 'Evolve';
+    src: url('../fonts/evolve-regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Define Thin Evolve Font */
+@font-face {
+    font-family: 'Evolve';
+    src: url('../fonts/evolve-thin.otf') format('opentype');
+    font-weight: 100;  /* 100 is the weight for Thin */
+    font-style: normal;
+}
+
+/* Define Bold Evolve Font */
+@font-face {
+    font-family: 'Evolve';
+    src: url('../fonts/evolve-bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}

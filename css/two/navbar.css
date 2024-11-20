@@ -1,0 +1,38 @@
+/* Navbar Styling */
+
+
+.navbar {
+    background-color: #2b0000;
+    padding: 0.5em;
+    position: sticky;  
+    top: 0;             
+    z-index: 100;
+    width: 100%;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.navbar-menu li {
+    position: relative;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    display: block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 20px;
+}
+
+/* Hover effect */
+.navbar-menu a:hover {
+    background-color: #555;
+    transform: scale(1.1);   /* Slight zoom effect */
+    border-radius: 15px;
+}

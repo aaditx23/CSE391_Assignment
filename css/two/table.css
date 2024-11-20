@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+
+    border-collapse: collapse;
+
+    th, td {
+        padding: 12px 15px;
+        border: 1px solid black;
+        text-align: center;
+        align-items: center;
+        background-color: bisque;
+        border: 1px solid black;
+    }
+
+    th {
+        background-color: #b9b4fa; /* Header background color */
+        color: black; /* Header text color */
+    }
+    .th-extra{
+        background-color: #1a137a; /* Header background color */
+        color: white; /* Header text color */
+        font-size: larger;
+    }
+
+
+
+    table td[rowspan] {
+        vertical-align: middle; /* Center merged cells */
+    }
+
+}

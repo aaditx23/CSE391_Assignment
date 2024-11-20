@@ -1,0 +1,40 @@
+/* Card Container */
+.card {
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);  /* Default shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+    cursor: pointer;
+    width: fit-content; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+
+}
+
+/* When the card is hovered over, increase shadow */
+.card:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.card-transparent {
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); /* Default shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+    cursor: pointer;
+    backdrop-filter: blur(10px); /* Adds blur effect */
+    width: fit-content; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+/* When the card is hovered over, increase shadow */
+.card-transparent:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}

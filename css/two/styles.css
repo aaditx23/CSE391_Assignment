@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.quote-box {
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid black;
+    width: 40%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.color-buttons {
+    margin: 10px;
+}
+
+.color-buttons button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animated-gradient-text {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(to right,#c00000,#000000, #a10000, #000000); /* Multiple gradient colors */
+    background-size: 400% 400%; /* Make the gradient large enough for animation */
+    animation: gradientAnimation 5s ease infinite; /* Apply animation */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    background-clip: text; /* For browsers that support background-clip on text */
+    color: transparent; /* Make text color transparent to show the gradient */
+}
+.animated-gradient-text-project {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(to right,#a500ce,#000000, #2000ad, #000000); /* Multiple gradient colors */
+    background-size: 400% 400%; /* Make the gradient large enough for animation */
+    animation: gradientAnimation 5s ease infinite; /* Apply animation */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    background-clip: text; /* For browsers that support background-clip on text */
+    color: transparent; /* Make text color transparent to show the gradient */
+    font-size: 40px;
+}
+
+.gradient-text {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient colors */
+    -webkit-background-clip: text; /* For webkit-based browsers */
+    background-clip: text; /* For browsers that support background-clip on text */
+    color: transparent; /* Make text color transparent to show the gradient */
+    
+}
+
+.centre {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Main body styles */
+.body-bg {
+    font-family: Evolve;
+    position: relative;
+    overflow: auto; /* Ensures the pseudo-element stays within bounds */
+    text-align: center;
+}
+
+/* Background overlay */
+.body-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://i.pinimg.com/1200x/fd/87/af/fd87afad680030bee211f21f5333d5fd.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    opacity: 0.8; /* Adjusts the opacity */
+    filter: blur(20px); /* Adds a blur effect */
+    z-index: -1; /* Keeps the background behind the content */
+}
+
+.rounded-image {
+    border-radius: 15px; /* Adjust radius for rounded corners */
+}
+
+p {
+    line-height: 200%;
+}

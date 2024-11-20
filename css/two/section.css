@@ -1,0 +1,15 @@
+/* Section Styling */
+section {
+    padding: 60px;
+    opacity: 0;
+    width: 100%;
+    transition: opacity 1s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+}
+
+
+
+

@@ -14,31 +14,69 @@ function loadNavbar() {
 
     // Check if the current page is index.html
     if (currentPage === "index.html" || currentPage === "") {
-        // Load full navbar for index.html
         nav.innerHTML = `
         <nav class="navbar" style="position: sticky;">
             <ul class="navbar-menu">
-                <li><a href=#top>HOME</a></li>
+                <li><a href="#top">HOME</a></li>
                 <li><a href="#section2">INTERESTS</a></li>
                 <li><a href="#section3">CO-CURRICULAR ACTIVITIES</a></li>
                 <li><a href="projects.html">PROJECTS</a></li>
+                <li>
+                    <select id="page-selector" class="dropdown">
+                        <option value="index.html" ${currentPage === "index.html" ? "selected" : ""}>Assignment 01</option>
+                        <option value="two.html" ${currentPage === "two.html" ? "selected" : ""}>Assignment 02</option>
+                    </select>
+                </li>
             </ul>
         </nav>
         `;
         navClick();
-    } else {
-        // Load limited navbar for other pages
+    } 
+    else if (currentPage === "two.html") {
+        nav.innerHTML = `
+        <nav class="navbar">
+            <ul class="navbar-menu">
+                <li><a href="#top">WEIGHT CONVERTER</a></li>
+                <li><a href="#section2">SERIES CALCULATOR</a></li>
+                <li><a href="#section3">MAGIC BOX</a></li>
+                <li>
+                    <select id="page-selector" class="dropdown">
+                        <option value="index.html" ${currentPage === "index.html" ? "selected" : ""}>Assignment 01</option>
+                        <option value="two.html" ${currentPage === "two.html" ? "selected" : ""}>Assignment 02</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+        `;
+    }
+    else {  //project.html
         nav.innerHTML = `
         <nav class="navbar">
             <ul class="navbar-menu">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="index.html#section2">INTERESTS</a></li>
                 <li><a href="index.html#section3">CO-CURRICULAR ACTIVITIES</a></li>
-                <li><a href="${currentPage}">${currentPage.replace(".html", "").toUpperCase()}</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li>
+                    <select id="page-selector" class="dropdown">
+                        <option value="index.html" ${currentPage === "index.html" ? "selected" : ""}>Assignment 01</option>
+                        <option value="two.html" ${currentPage === "two.html" ? "selected" : ""}>Assignment 02</option>
+                    </select>
+                </li>
             </ul>
         </nav>
         `;
     }
+
+    addDropdownListener();
+}
+
+function addDropdownListener() {
+    const dropdown = document.getElementById("page-selector");
+    dropdown.addEventListener("change", (event) => {
+        const selectedPage = event.target.value;
+        window.location.href = selectedPage;
+    });
 }
 
 function navClick(){
@@ -57,6 +95,7 @@ function navClick(){
                     behavior: 'smooth',
                     block: 'start',
                 });
+                history.replaceState(null, null, window.location.pathname);
                 console.log("Navigated to section:", sectionId);
             } else {
                 // Navigate to another page

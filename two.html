@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 02</title>
+    <link rel="stylesheet" href="css/two/styles.css" />
+    <link rel="stylesheet" href="css/two/section.css" />
+    <link rel="stylesheet" href="css/two/navbar.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/two/clickable-card.css" />
+    <link rel="stylesheet" href="css/two/card.css" />
+    <link rel="stylesheet" href="css/two/table.css" />
+    <link rel="stylesheet" href="css/two/div.css" />
+    
+    <script src="js/two/Fortune.js"></script>
+    <script src="js/two/fortuneManager.js"></script>
+    <script src="js/two/weightConverter.js"></script>
+    <script src="js/two/array.js"></script>
+    <script src="js/two/magic.js"></script>
+    <script src="js/navbar.js"></script>
+</head>
+<body class="body-bg">
+
+    <section id="top" style="padding: 0px;"></section>
+
+    <div id="navbar-container" class="navbar">
+
+    </div>
+
+    <section id="section1">
+        <div class="card" style="padding: 20px;">
+            <h2>Weight Converter</h2><br>
+            <label for="weightIn">Weight:</label><br>
+            <input type="number" id="weightIn" placeholder="Enter weight" /><br>
+    
+            <label for="unitType">Convert:</label><br>
+            <select id="unitType">
+                <option value="k2p">KG -> lb</option>
+                <option value="p2k">lb -> KG</option>
+            </select><br>
+    
+            <button onclick="convert()">Convert</button><br>
+    
+            <span id="result"></span>
+        </div>
+    </section>
+
+    <section id="section2">
+        <div class="card" style=" padding: 20px; background-color: cadetblue;">
+            <h2>Series Calculator</h2><br>
+            <label for="seriesInput">Input series of numbers (comma-separated):</label><br>
+            <input type="text" id="seriesInput" placeholder="e.g., 5, 10, 15" />
+            <div class="card-transparent" style="background-color: rgba(106, 0, 206, 0.3); margin-top: 10px;">
+                <div><strong>Max:</strong> <span id="maxOutput">-</span></div>
+                <div><strong>Min:</strong> <span id="minOutput">-</span></div>
+                <div><strong>Sum:</strong> <span id="sumOutput">-</span></div>
+                <div><strong>Average:</strong> <span id="avgOutput">-</span></div>
+                <div><strong>Reverse Order:</strong> <span id="reverseOutput">-</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section3">
+        <div>
+            <h1>Text Manipulator</h1>
+            <textarea id="textArea"></textarea>
+            <div>
+                <button id="clearAll">Clear All</button>
+                <button id="capitalize">Capitalize</button>
+                <button id="sort">Sort</button>
+                <button id="reverse">Reverse</button>
+                <button id="stripBlank">Strip Blank</button>
+                <button id="addNumbers">Add Numbers</button>
+                <button id="shuffle">Shuffle</button>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="quote-box" id="quote-box">
+        Your fortune will appear here.
+    </div>
+
+
+    <footer>
+        <p>&copy; CSE391</p>
+    </footer>
+
+    <script>
+
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            loadNavbar();
+            scrollOpacity();
+            const fortuneManager = new FortuneManager("quote-box");
+            fortuneManager.displayRandomFortune();
+
+            document.querySelectorAll(".clickable-card").forEach(button => {
+                const idx = Number(button.getAttribute("index"));
+                const object = fortuneManager.fortuneStyles[idx]
+                fortuneManager.setButtonColors(button, idx);
+                button.addEventListener("click", () => {
+                    fortuneManager.changeStyle(idx);
+                });
+            });
+            document.querySelectorAll(".clickable-card-transparent").forEach(div => {
+            div.addEventListener("click", () => {
+                const url = div.getAttribute("url");
+                if (url) {
+                    window.open(url, "_blank");
+                }
+                });
+            });
+        });
+        
+
+    </script>
+</body>
+</html>
